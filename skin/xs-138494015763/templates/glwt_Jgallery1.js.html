@@ -1,0 +1,102 @@
+<!-- JavaScript für Jquery Galerie 0 -->
+{literal}
+
+<link rel="stylesheet" type="text/css" href="_lib/jquery/contentFlow/contentflow.css" />
+
+<script type="text/javascript"	src="_lib/jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript"	src="_lib/jquery/contentFlow/contentflow.js"></script>
+<script type="text/javascript"	src="_lib/jquery/colorbox/jquery.colorbox-min.js"></script>
+
+<script type="text/javascript">
+var returnArrayGallery = Array();
+var returnArrayAlbum = Array();
+
+$(document).ready(function() {
+
+	$(".colorbox").colorbox({
+		transition		: 'elastic',
+		speed			: '350',
+		initialWidth	: 5,
+		initialHeight	: 5,
+		slideshow		: true,
+		slideshowSpeed	: 2500,
+		slideshowAuto	: false,
+		slideshowStart	: 'Play',
+		slideshowStop	: 'Stop',
+		current			: '{current} / {total}',
+		title			: false
+	});	
+	
+	
+	
+	$('ul.albumList li > a').click(function() {
+	    var $this = $(this);
+	    var $parent = $this.parent();
+	    if ($parent.hasClass('noaccordion')) {
+	        return false;
+	    }
+	    var $checkElement = $this.next();
+	    if ($checkElement.is('ul')) {
+	        $checkElement.slideToggle('fast');
+	    }
+	    return false;
+	});
+	
+	
+	$('ul.albumList li > a').click();
+	
+});
+
+
+
+function loadGalleryContent(galleryNavId) {
+	$.ajax({
+		type: "POST",
+		url: "moduls/jgallery/ajax.php",
+		data: "action=gallery&id=" + galleryNavId,
+		success: function(msg){
+			//alert(msg);
+			returnArrayGallery = $.evalJSON(msg);
+			generateHTMLOutput(0);
+		}
+	});
+}
+
+function loadAlbumContent(albumId) {
+	$.ajax({
+		type: "POST",
+		url: "moduls/jgallery/ajax.php",
+		data: "action=album&id=" + albumId ,
+		success: function(msg){
+			//alert(msg);
+			returnArrayAlbum = $.evalJSON(msg);
+			generateHTMLOutput(1);
+		}
+	});
+}
+
+function generateHTMLOutput(act) {
+	switch (act) {
+	    case 0:
+	    	//HTML für Gallery
+	    	var htmlString = '';
+	        break;
+
+	    case 1:
+	    	//HTML für Album
+	    	var htmlString = '';
+	        break;
+
+	    default:
+	    	var htmlString = '';
+	    	//standard
+	}
+	
+	return htmlString;
+}
+
+
+
+
+</script>
+{/literal}

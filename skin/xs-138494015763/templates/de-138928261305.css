@@ -1,0 +1,29 @@
+.boxImage {
+	position: relative;
+	background-size: cover;
+	margin-bottom: 10px;
+}
+
+.boxImage > img, .boxImage > a img {
+	width: 100%;
+	height: auto;
+}
+
+.boxImage > img a {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+
+.boxText h2 {
+	font-size: 1.6rem;
+	border-bottom: 1px solid #A18A76;
+	margin-bottom: 16px;
+}
+
+.boxText a, .boxText a:hover {
+	color: #623C1B;
+	text-decoration: none;
+}
+

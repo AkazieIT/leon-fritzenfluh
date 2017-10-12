@@ -1,0 +1,80 @@
+/*** CSS für Jquery Galerie 0 ***/
+a:active, a:focus {
+	outline: none
+}
+
+#glws_GalleryList {
+	float: left; 
+	padding: 0 8px 8px 0;
+}
+
+#glws_GalleryList img {
+	border: 2px solid #999;
+}
+
+#glws_GalleryList img:hover {
+	border: 2px solid #333;
+}
+
+
+
+
+ul.albumList {
+	list-style:none outside none;
+	padding:0;
+	margin:0;
+}
+
+ul.albumList li {
+	list-style:none outside none;	
+	padding:0;
+	margin:0;
+}
+
+ul.albumList li ul {
+	list-style:none outside none;	
+	padding:0;
+	margin:0;
+}
+
+ul.albumList li ul li {
+	list-style:none outside none;	
+	padding:0;
+	margin:0;
+}
+
+.galleryDescription {
+	padding-top:10px;
+	padding-bottom:10px;	
+}
+
+#downloadLink {
+	position:absolute;
+	width:100%;
+	text-align:center;
+	left:0;	
+	bottom:4px;
+}
+
+#downloadLink a {
+	color:#666;
+	text-decoration:none;
+}
+
+#downloadLink a:hover {
+	color:#ffbb44;
+	text-decoration:none;
+}
+
+#cboxSlideshow {
+	color:#666;	
+}
+
+#cboxSlideshow:hover {
+	color:#ffbb44;	
+}
+
+
+#lightboxTitle {
+	padding-top:10px;	
+}

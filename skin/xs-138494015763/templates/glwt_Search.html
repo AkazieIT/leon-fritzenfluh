@@ -1,0 +1,7 @@
+<div class="glws_SearchBox">
+    <p>{$glwp_Lang.search_title}</p>
+    <form method="post" id="searchForm" name="searchForm" action="{$glwp_PathWebRoot}/search.php?id={$glwp_Id}" onsubmit="return ChkSearchTerm()">
+    <input class="glws_SearchField" type="text" id="searchTerm" name="searchTerm" value="{$glwp_Lang.search_text}" onclick="CleanSearchbox('{$glwp_Lang.search_text}')" />
+    <button class="glws_SearchButton" type="submit">{$glwp_Lang.search_button}</button>
+    </form>
+</div>

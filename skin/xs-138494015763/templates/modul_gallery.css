@@ -1,0 +1,45 @@
+/****************************************************************************************\
+Modul Gallery
+\****************************************************************************************/
+div.glws_GalleryContainer {
+	width:100%;
+	padding:0px;
+	margin:0px;
+}
+div.glws_GalleryHeader {
+	width:100%;
+}
+div.glws_GalleryBody {
+	width:100%;
+}
+div.glws_GalleryFooter {
+	width:100%;
+}
+table.glws_GalleryTable {
+	width:100%;
+	padding-bottom:5px;
+}
+td.glws_GalleryContent {
+	vertical-align:top;
+	padding-bottom:20px;
+	padding-right:18px;
+}
+td.glws_GalleryThumb {
+	vertical-align:top;
+	text-align:right;
+	padding-bottom:20px;
+	padding-right:10px;
+}
+a.glws_GalleryTitle {
+	font-weight:bold;
+	display: block;
+	padding-bottom:4px;
+}
+a.glws_GalleryTitle:hover {
+	font-weight:bold;
+	display: block;
+	padding-bottom:4px;
+}
+span.glws_GalleryDesc {
+}
+

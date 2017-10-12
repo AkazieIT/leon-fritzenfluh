@@ -1,0 +1,84 @@
+
+<div class="glws_GalleryContainer">
+	 {if $glwp_GalleryCount > 0}
+
+	  	 <!-- Mehrere Alben vorhanden -->
+		 {if $glwp_GalleryCount > 1}
+			{if $glwp_GallerySettings.header != ''}
+			   <div class="glws_GalleryHeader">
+					{$glwp_GallerySettings.header}
+			   </div>
+			{/if}
+		    <div class="glws_GalleryBody">
+		        <table class="glws_GalleryTable" cellspacing="0" cellpadding="0" border="0">
+		        {foreach item=field from=$glwp_Galleries}
+		            <tr>
+		                <td class="glws_GalleryContent">
+		                    <a class="glws_GalleryTitle" href="{$field.link}">{$field.title}</a>
+		                    {if $field.desc != ''}
+		                    <span class="glws_GalleryDesc">{$field.desc}</span>
+		                    {/if}
+		                </td>
+		                {if $field.thumb != ''}
+		                <td class="glws_GalleryThumb">
+		                    <a class="glws_GalleryTitle" href="{$field.link}"><img border="0" src="{$glwp_GalleryPath}{$field.id}/glw_thumbnails/{$field.thumb}" title="{$field.title}" alt="{$field.title}" /></a>
+		                </td>
+		                {/if}
+		            </tr>
+		        {/foreach}
+		        </table>
+		    </div>
+			 {if $glwp_GallerySettings.footer != ''}
+			    <div class="glws_GalleryFooter">
+			 		{$glwp_GallerySettings.footer}
+			    </div>
+			 {/if}
+
+		 <!-- Nur ein Album vorhanden oder einzelnes Album ausgewählt-->
+		 {else}
+			<div id="{$glwp_Galleries[0].id}" class="glws_GalleryHeader">
+				<h1>{$glwp_Galleries[0].title}</h1>
+				{if $glwp_Galleries[0].desc != ''}
+						{$glwp_Galleries[0].desc}
+				{/if}
+			</div>
+
+		    	<div id="myFantasicFlow">
+		            <div class="loadIndicator"><div class="indicator"></div></div>
+		            <div class="flow">
+		            	{assign var="galleryId" value=$glwp_Galleries[0].id}
+		   			    {foreach item=field from=$glwp_GalleryItems.$galleryId}
+
+			    		<img class="item" id="{$field.id}" src="{$glwp_GalleryPath}{$galleryId}/glw_thumbnails/{$field.image}" title="{$field.title}" alt="{$field.title}" />
+
+
+		            	{/foreach}
+
+		            </div>
+		            <div class="globalCaption"></div>
+		            <div class="scrollbar"><div class="slider"><div class="position"></div></div></div>
+		        </div>
+
+		        <div class="allElements" style="display:none;">
+			        {assign var="galleryId" value=$glwp_Galleries[0].id}
+	   			    {foreach item=field from=$glwp_GalleryItems.$galleryId}
+
+		    		<a id="{$field.id}" class="colorbox" href="{$glwp_PathWebRoot}/moduls/jgallery/ajax.php?action=htmlitem&amp;id={$field.id}&amp;galleryId={$galleryId}" rel="{$galleryId}" title="" alt="{$field.title}"></a>
+
+
+	            	{/foreach}
+	            </div>
+
+
+		    <!-- Backlink -->
+		 	{if $glwp_AllGalleriesCount > 1}
+		 		<br class="glws_ClearAll" />
+			 	<p><a href="{$glwp_GalleryLink}" title="{$glwp_GalleryOverview}">{$glwp_GalleryOverview}</a></p>
+		 	{/if}
+
+
+		 {/if}
+	 {/if}
+</div>
+<br class="glws_ClearAll" />
+

@@ -1,0 +1,25 @@
+{foreach item=field from=$xContent}
+	{assign var="titleMargin" value=''}
+	<article>
+		<div class="row">
+			<div class="span_6">
+				{if $field.title != ''}
+					<h1>{$field.title}</h1>
+					{assign var="titleMargin" value='titleMargin'}
+				{/if}
+				{$field.descriptionleft}
+			</div>
+
+			<div class="span_6 {$titleMargin}">
+				{if $field.descriptionright != ''}
+					{$field.descriptionright}
+				{/if}
+				{if $field.citeright != ''}
+					<div class="cite">
+						{$field.citeright}
+					</div>
+				{/if}
+			</div>
+		</div>
+	</article>
+{/foreach}

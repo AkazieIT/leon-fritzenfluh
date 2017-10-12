@@ -1,0 +1,33 @@
+<div class="glws_GalleryContainer">
+    {if $glwp_GalleryHeader != ''}
+    <div class="glws_GalleryHeader">
+        {$glwp_GalleryHeader}
+    </div>
+    {/if}
+    <div class="glws_GalleryBody">
+        <table class="glws_GalleryTable" cellspacing="0" cellpadding="0" border="0">
+        {foreach item=field from=$glwp_Gallery}
+            <tr>
+                <td class="glws_GalleryContent">
+                    <a class="glws_GalleryTitle" href="{$field.link}" target="{$field.target}" rel="{$field.rel}">{$field.title}</a>
+                    {if $field.desc != ''}
+                    <span class="glws_GalleryDesc">{$field.desc}</span>
+                    {/if}
+                </td>
+                {if $field.thumb != ''}
+                <td class="glws_GalleryThumb">
+                    <a class="glws_GalleryTitle" href="{$field.link}" target="{$field.target}" rel="{$field.rel}"><img src="{$glwp_PathWebRoot}/_upl/gallery/{$field.id}/glw_thumbnails/{$field.thumb}" border="0" title="{$field.title}" alt="{$field.title}" /></a>
+                </td>
+                {/if}
+            </tr>
+        {/foreach}
+        </table>
+    </div>
+
+    {if $glwp_GalleryFooter != ''}
+    <div class="glws_GalleryHeader">
+        {$glwp_GalleryHeader}
+    </div>
+    {/if}
+</div>
+<br class="glws_ClearAll" />

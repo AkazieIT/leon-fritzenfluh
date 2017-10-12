@@ -1,0 +1,18 @@
+<div class="glws_Entry">
+{if $glwp_SearchNumResult >0}
+
+{$glwp_SearchHeader}
+
+{foreach item=field from=$glwp_SearchResult}
+<p class="glws_SearchTitle"><a href="{$field.link}" target="{$field.target}">{$field.title}</a></p>
+<p class="glws_SearchDesc">{$field.text}</p>
+<br />
+{/foreach}
+
+{else}
+
+{$glwp_SearchNotFound}
+
+{/if}
+</div>
+

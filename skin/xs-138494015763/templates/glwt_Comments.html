@@ -1,0 +1,91 @@
+
+<div style="border: 1px solid #ccc; background-color: #f6f6f6; padding:10px;">
+	<h1>{$lang.comment_title} {if $commentsTotal > 0}({$commentsTotal}){/if}</h1>
+	{if $commentsTotal > 0}
+		{foreach item=field from=$comments}
+			<div style="border-top: 1px solid #ccc; padding: 10px 0 0">
+				<p><strong>{$field.title}</strong><br />
+				{$field.text}</p>
+				<p><small>{$lang.comment_from} <strong><small>{$field.from},</small></strong> {$lang.comment_date} {$field.date}</small></p>
+				<!--
+				********************************************************************************************************
+				* KOMMENTAR-VOTING
+				* Dieses sollte per Ajax ausgeführt werden. Die aufgeführten Links mit der entsprechenden Action
+				* und ID können als Ajax-Request aufgerufen werden. (siehe moduls/comments/actions.php)
+				* Der Request gibt einen JSON-formatierten Array zurück:
+				*
+				* Fehler:
+				* array(error => comment_general_error)      //genereller Fehler (Übersetzung aus Sprachdatei)
+				* array(error => comment_already_voted)      //Benutzer hat für diesen Eintrag bereits abgestimmt
+				                                               (Übersetzung aus Sprachdatei)
+				*
+				* Erfolg:
+				* array(ratingMessage      => comment_voting_ok,   //Bestätigungsmeldung (Übersetzung aus Sprachdatei)
+				*       ratingId           => string,              //ID des bewerteten Kommentars
+				*       ratingPlus         => int,                 //Total positive Stimmen
+				*       ratingMinus        => int,                 //Total negative Stimmen
+				*       ratingTotal        => int,                 //Total abgegebene Stimmen
+				*       ratingBalance      => int,                 //Total positive minus negative Stimmen
+				*       ratingPercentPlus  => int,                 //Total positive Stimmen in %
+				*       ratingPercentMinus => int)                 //Total negative Stimmen in %
+				********************************************************************************************************
+				-->
+				<!--
+				<p>
+				<a href="#" onclick="javascript:popup('{$actionLink}?action=votePlus&amp;id={$field.id}',300,200); return false;">vote +</a>&nbsp;&nbsp;&nbsp;
+				<a href="#" onclick="javascript:popup('{$actionLink}?action=voteMinus&amp;id={$field.id}',300,200); return false;">vote -</a>&nbsp;&nbsp;&nbsp;
+				<span id="voting{$field.id}">{$field.ratingBalance}</span>
+				</p>
+				-->
+			</div>
+		{/foreach}
+	{else}
+		<p>{$lang.comment_nocomment}</p>
+	{/if}
+	<div style="border-top: 1px solid #ccc; padding-top: 10px;">
+		<a name="{$cid}"></a>
+		<h2>{$lang.comment_add_comment}</h2>
+		{if $commentId == $cid}
+			{if $captchaError == 'captchaError'}
+				<p style="color: red">{$lang.comment_captcha_error}</p>
+
+			{elseif $newCommentError == 'newCommentError'}
+				<p style="color: red">{$lang.comment_error}</p>
+			{/if}
+		{/if}
+		<form action="{$action}" method="post">
+			<input type="hidden" name="comment_cid" id="comment_cid" value="{$cid}" />
+			<input type="hidden" name="new_comment" id="new_comment" value="1" />
+			<p>{$lang.comment_label_name}<br/><input class="inp300" type="text" name="comment_from" id="comment_from" value="{$newCommentValues.from}" /></p>
+			<p>{$lang.comment_label_title}<br/><input class="inp300" type="text" name="comment_title" id="comment_title" value="{$newCommentValues.title}" /></p>
+			<p>{$lang.comment_label_comment}<br /><textarea class="inp300" name="comment_text" id="comment_text">{$newCommentValues.text}</textarea></p>
+			<p>
+				<img id="siimage{$cid}" style="padding-right: 5px; border: 0" src="{$securimageLink}?sid={$securimageSid}" />
+				<a href="#" title="Refresh Image" onclick="document.getElementById('siimage{$cid}').src = '{$securimageLink}?sid=' + Math.random(); return false">
+				<img title="{$lang.comment_captcha_reload}" src="_upl/images/reload_icon.png" alt="Reload Image" border="0" onclick="this.blur()" align="bottom" /></a>
+			</p>
+			<p>{$lang.comment_label_captcha}<br /><input class="inp150" type="text" name="code" size="12" /></p>
+			<!--
+			********************************************************************************************************
+			* KOMMENTAR-BEDINGUNGEN
+			* Diese können ebenfalls mittel Ajax-Request aufgerufen werden:
+			*
+			* {$actionLink}?action=terms&lng={$lng}
+			*
+			* Der Request gibt einen JSON-formatierten Array zurück:
+			*
+			* Fehler:
+			* array(error => comment_general_error)    //genereller Fehler (Übersetzung aus Sprachdatei)
+			*
+			* Erfolg:
+			* array(terms => string)     //HTML-formatierter String aus Optionen > Kopf- und Fusszeilen
+			********************************************************************************************************
+			 -->
+			<p><input type="checkbox" name="terms" name="terms" value="accept" /> <a href="{$termsLink}" onclick="javascript: popup('{$termsLink}',500,300); return false;">{$lang.comment_label_accept_terms}</a></p>
+			<p><input class="longbutform" type="submit" value="{$lang.comment_label_submit}" /></p>
+		</form>
+	</div>
+</div>
+<br class="glws_ClearAll" />
+
+

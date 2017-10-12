@@ -1,0 +1,88 @@
+/*** CSS für Jquery Galerie 0 ***/
+
+.row a.gallery {
+    background-size: cover;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.42);
+    display: block;
+    float: left;
+    height: auto;
+    width: 100%;
+}
+
+.boxText {
+	clear: both;
+	padding: 10px 0 20px;
+}
+
+.boxSpacer {
+	clear: both;
+}
+
+.boxText h2 {
+	font-size: 1.6rem;
+	border-bottom: 1px solid #A18A76;
+	margin-bottom: 16px;
+}
+
+.boxText a, .boxText a:hover {
+	color: #623C1B;
+	text-decoration: none;
+}
+
+
+/**
+ * CSS image crop. Forces image to 4:3 aspect ratio cropping at the middle.
+ * http://dabblet.com/gist/4711695
+ */
+.img-crop,
+.img-crop img{
+	width: 100%; /* gotta be responsive these days */
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing:    content-box;
+	box-sizing:         content-box;
+}
+
+.img-crop{
+	background-color: #ededed; /* some background color for short images */
+	overflow: hidden;
+	max-width: 300px;
+	float: left;
+
+	/* remove white-space for inline-block elements */
+	letter-spacing: -0.31em; /* webkit */
+	*letter-spacing: normal; /* reset IE < 8 */
+	word-spacing: -0.43em; /* IE < 8 && gecko */
+}
+
+.img-crop:before,
+.img-crop img{
+	/* vertically center the image */
+	display: inline-block;
+	vertical-align: middle;
+}
+.img-crop:before{
+	/* pseudo element to vertically align image to */
+	content: "";
+	
+	/* Magic Number */
+	/* Set this to your desired height(to width) ratio */
+	padding-top: 80%; /* % of original image width */ 
+}
+.img-crop img{
+	/* removes(sorta) image from the flow */
+	padding-left: 100%;
+	margin: -999em -100%;
+}
+
+.img-crop {
+	max-width: 100%;
+	margin-top: 0;
+}
+
+.img-crop:before{
+	padding-top: 60%;
+}
+
+.row {
+	margin-bottom: 24px;
+}

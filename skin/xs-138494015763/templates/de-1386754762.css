@@ -1,0 +1,18 @@
+/*Individuelles Stylesheet für diese Seite*/
+.titleMargin {
+	margin-top: 38px;
+}
+
+.cite {
+    font-family: times new roman, serif;
+    font-size: 1.7rem;
+    font-style: italic;
+    margin-left: 60px;
+}
+
+@media
+only screen and (max-width: 779px ) {
+	.cite {
+	    margin-left: 0;
+	}
+}

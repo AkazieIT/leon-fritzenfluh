@@ -1,0 +1,51 @@
+/****************************************************************************************\
+Modul Benutzerlisten
+\****************************************************************************************/
+div.glws_UserListContainer {
+	width:100%;
+	padding:0px;
+	margin:0px;
+}
+div.glws_UserListHeader {
+	width:100%;
+}
+div.glws_UserListBody {
+	width:100%;
+	border-top: 1px solid #c0c0c0;
+	padding: 10px 0;
+}
+div.glws_UserListFooter {
+	width:100%;
+}
+table.glws_UserList {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+table.glws_UserList tr th {
+	text-align:left;
+	padding:3px 20px 3px 0;
+}
+table.glws_UserList tr td {
+	vertical-align:top;
+	text-align:left;
+	padding:3px 20px 3px 0;
+}
+
+table.glws_UserSearch {
+	margin-bottom:10px;
+}
+table.glws_UserSearch td {
+	padding:3px 10px 3px 0;
+}
+.glws_UserSearchInp {
+	background-color:#f0f0f0;
+	border:1px solid #c0c0c0;
+	width: 200px;
+}
+.glws_UserSearchBut {
+	background-color:#f0f0f0;
+	border:1px solid #c0c0c0;
+	width: 100px;
+}
+

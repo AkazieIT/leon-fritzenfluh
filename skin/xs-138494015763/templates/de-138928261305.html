@@ -1,0 +1,103 @@
+<article>
+	{foreach item=field from=$xContent}
+		<div class="row">
+			<div class="span_9">
+				<h1>{$field.title}</h1>
+				{$field.texttop}
+			</div>
+		</div>
+		<div class="row">
+			{if $field.imagebox1 != ''}
+				<div class="span_{$span}">
+					<div class="boxImage">
+						{if $field.linkbox1 != ''}
+							<a href="/_upl/files/{$field.linkbox1}" target="_blank"><img src="/_upl/images/{$field.imagebox1}" alt="{$field.titlebox1}" /></a>
+						{else}
+							<img src="/_upl/images/{$field.imagebox1}" alt="{$field.titlebox1}" />
+						{/if}
+					</div>
+					<div class="boxText">
+						{if $field.titlebox1 != ''}
+							{if $field.linkbox1 != ''}
+								<h2><a href="/_upl/files/{$field.linkbox1}" target="_blank">{$field.titlebox1}</a></h2>
+							{else}
+								<h2>{$field.titlebox1}</h2>
+							{/if}
+						{/if}
+						{$field.textbox1}
+					</div>
+				</div>
+			{/if}
+			{if $field.imagebox2 != ''}
+				<div class="span_{$span}">
+					<div class="boxImage">
+						{if $field.linkbox2 != ''}
+							<a href="/_upl/files/{$field.linkbox2}" target="_blank"><img src="/_upl/images/{$field.imagebox2}" alt="{$field.titlebox2}" /></a>
+						{else}
+							<img src="/_upl/images/{$field.imagebox2}" alt="{$field.titlebox2}" />
+						{/if}
+					</div>
+					<div class="boxText">
+						{if $field.titlebox2 != ''}
+							{if $field.linkbox2 != ''}
+								<h2><a href="/_upl/files/{$field.linkbox2}" target="_blank">{$field.titlebox2}</a></h2>
+							{else}
+								<h2>{$field.titlebox2}</h2>
+							{/if}
+						{/if}
+						{$field.textbox2}
+					</div>
+				</div>
+			{/if}
+			{if $field.imagebox3 != ''}
+				<div class="span_{$span}">
+					<div class="boxImage">
+						{if $field.linkbox3 != ''}
+							<a href="/_upl/files/{$field.linkbox3}" target="_blank"><img src="/_upl/images/{$field.imagebox3}" alt="{$field.titlebox3}" /></a>
+						{else}
+							<img src="/_upl/images/{$field.imagebox3}" alt="{$field.titlebox3}" />
+						{/if}
+					</div>
+					<div class="boxText">
+						{if $field.titlebox3 != ''}
+							{if $field.linkbox3 != ''}
+								<h2><a href="/_upl/files/{$field.linkbox3}" target="_blank">{$field.titlebox3}</a></h2>
+							{else}
+								<h2>{$field.titlebox3}</h2>
+							{/if}
+						{/if}
+						{$field.textbox3}
+					</div>
+				</div>
+			{/if}
+			{if $field.imagebox4 != ''}
+				<div class="span_{$span}">
+					<div class="boxImage">
+						{if $field.linkbox4 != ''}
+							<a href="/_upl/files/{$field.linkbox4}" target="_blank"><img src="/_upl/images/{$field.imagebox4}" alt="{$field.titlebox4}" /></a>
+						{else}
+							<img src="/_upl/images/{$field.imagebox4}" alt="{$field.titlebox4}" />
+						{/if}
+					</div>
+					<div class="boxText">
+						{if $field.titlebox4 != ''}
+							{if $field.linkbox4 != ''}
+								<h2><a href="/_upl/files/{$field.linkbox4}" target="_blank">{$field.titlebox4}</a></h2>
+							{else}
+								<h2>{$field.titlebox4}</h2>
+							{/if}
+						{/if}
+						{$field.textbox4}
+					</div>
+				</div>
+			{/if}
+		</div>
+		{if $field.textbottom != ''}
+			<div class="row">
+				<div class="span_9">
+					{$field.textbottom}
+				</div>
+			</div>
+		{/if}
+	{/foreach}
+</article>

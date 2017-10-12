@@ -1,0 +1,77 @@
+/****************************************************************************************\
+WYSIWYG Editor Stylesheet
+\****************************************************************************************/
+body,td,p,a,ul,ol,li,blockquote,h1,h2,h3 {
+    color:#000000;
+    font-size:12px;
+    font-family:Arial, Helvetica, Geneva, Swiss, SunSans-Regular;
+}
+
+body,p,h1,h2,h3 {
+    margin:0px;
+    padding:0px;
+}
+
+body {
+    background-color:#ffffff;
+    margin-top:5px;
+    margin-bottom:20px;
+}
+
+p {
+    color:#000000;
+    margin-bottom:10px;
+}
+
+small {
+    font-size:11px;
+}
+h1 {
+    color:#000000;
+    margin-bottom:10px;
+    font-size:14px;
+    font-weight:600;
+}
+
+h2 {
+    color:#000000;
+    margin-bottom:5px;
+    font-size:13px;
+    font-weight:600;
+}
+
+h3 {
+    color:#000000;
+    margin-bottom:5px;
+    font-size:12px;
+    font-style:italic;
+    font-weight:600;
+}
+
+a {
+    color:#000000;
+    text-decoration:underline;
+}
+a:hover {
+    color:#f79647;
+    text-decoration:underline;
+}
+
+.inp400,.inp350,.inp300,.inp250,.inp200,.inp150,.inp100,.inp50,.butform,.longbutform {
+    font-family:Arial, Helvetica, Geneva, Swiss, SunSans-Regular;
+    font-weight:100;
+    font-size:12px;
+    color:#000000;
+    background-color:#f0f0f0;
+    border:1px solid #808080;
+}
+.inp400 { width:400px }
+.inp350 { width:350px }
+.inp300 { width:300px }
+.inp250 { width:250px }
+.inp200 { width:200px }
+.inp150 { width:150px }
+.inp100 { width:100px }
+.inp50 { width:50px }
+.butform {width:100px }
+.longbutform { width:150px }

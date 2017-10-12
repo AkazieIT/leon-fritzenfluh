@@ -1,0 +1,12 @@
+<?php xml version="1.0" encoding="utf-8"?>
+<xfields>
+    <content>
+        <field tag="text" type="text" id="title" name="title" label="Titel" class="inpStd">
+        </field>
+        <field tag="textarea" type="wysiwyg" id="description" name="description" label="Beschrieb" class="inp500100Area">
+        </field>
+        <field tag="checkbox" id="homebox" name="homebox" label="Homebox aktivieren" value="ja">
+        </field>
+    </content>
+</xfields>
+

@@ -1,0 +1,10 @@
+<div style="width:{$detailImageWidth}px;">
+	<img src="{$galleryPath}{$gallerySettings.id}/glw_mediumsize/{$detailImage}" alt="{$detailTitle}" width="{$detailImageWidth}" height="{$detailImageHeight}" />
+	
+	<h2 id="lightboxTitle">{$detailTitle}&nbsp;</h2>
+	<p>{$detailDesc}&nbsp;</p>
+	
+	{if $gallerySettings.download == 1}
+		<div id="downloadLink"><a href="{$galleryPath}{$gallerySettings.id}/{$detailImage}" target="_bank">Download Originalgrösse</a></div>
+	{/if}
+</div>

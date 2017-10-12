@@ -1,0 +1,145 @@
+{literal}
+<!-- JavaScript für Jquery Galerie 3 -->
+
+<script type="text/javascript"	src="_lib/jquery/jquery-1.4.2.min.js"></script>
+
+<script type="text/javascript">
+var returnArrayGallery = Array();
+var returnArrayAlbum = Array();
+
+var bildID = "";
+var oldBildID = "";
+var aktBildIndex = 0;
+var anzahlBilder = 0;
+var stat = 0;
+var inVal;
+
+function loadGalleryContent(galleryNavId) {
+	$.ajax({
+		type: "POST",
+		url: "moduls/jgallery/ajax.php",
+		data: "action=gallery&id=" + galleryNavId,
+		success: function(msg){
+			//alert(msg);
+			returnArrayGallery = $.evalJSON(msg);
+			generateHTMLOutput(0);
+		}
+	});
+}
+
+function loadAlbumContent(albumId) {
+	$.ajax({
+		type: "POST",
+		url: "moduls/jgallery/ajax.php",
+		data: "action=album&id=" + albumId ,
+		success: function(msg){
+			//alert(msg);
+			returnArrayAlbum = $.evalJSON(msg);
+			generateHTMLOutput(1);
+		}
+	});
+}
+
+function generateHTMLOutput(act) {
+	switch (act) {
+	    case 0:
+	    	//HTML für Gallery
+	        break;
+
+	    case 1:
+	    	//HTML für Album
+	        break;
+
+	    default:
+	    	//standard
+	}
+}
+
+function showImage(bildID) {
+	if(oldBildID != '') {		
+		$('#'+oldBildID).fadeOut('slow', function() {
+			$('#'+bildID).fadeIn('slow');
+		});
+		
+		/*$('#'+bildID).fadeIn('slow', function() {
+			$('#'+oldBildID).fadeOut('slow');
+			oldBildID = bildID;
+		});*/
+		
+		$('.thumbnailLink a img').each(function(index) {
+			if($(this).attr('rel') == bildID) {
+				aktBildIndex = index;
+			}
+		});
+		
+		oldBildID = bildID;
+		
+	}
+	
+	return false;
+}
+
+function playGallery() {
+	inVal = setInterval("$('#nextGallery').click()", 2500 );
+}
+
+function stopGallery() {
+	clearInterval(inVal);
+}
+
+$(document).ready(function() {
+	
+	oldBildID = $('.imageHolderBidFirst').attr('id');
+	var allThumb = new Array();
+	
+	$('.thumbnailLink a img').each(function(index) {
+		allThumb[index] = $(this);
+		anzahlBilder = index;
+	});
+	
+	
+	$('#prevGallery').click(function(e) {
+		e.preventDefault();
+		if(aktBildIndex-1 < 0) {
+			showImage(allThumb[anzahlBilder].attr('rel'));
+		}
+		else {
+			showImage(allThumb[aktBildIndex-1].attr('rel'));
+		}
+		//return false;
+	});
+	
+	
+	$('#nextGallery').click(function(e) {
+		e.preventDefault();
+		if(aktBildIndex+1 > anzahlBilder) {
+			showImage(allThumb[0].attr('rel'));
+		}
+		else {
+			showImage(allThumb[aktBildIndex+1].attr('rel'));
+		}
+		//return false;
+	});
+	
+	
+	
+	$('#playGallery').click(function(e) {
+		e.preventDefault();
+		
+		if(stat == 0) {
+			playGallery();
+			$(this).html('Stop');
+			stat = 1;	
+		}
+		else {
+			stopGallery();
+			$(this).html('Play');
+			stat = 0;
+		}
+		return false;
+	});
+	
+});
+
+</script>
+{/literal}

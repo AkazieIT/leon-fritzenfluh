@@ -1,0 +1,94 @@
+
+	 {if $glwp_GalleryCount > 0}
+
+	  	 <!-- Mehrere Alben vorhanden -->
+		 {if $glwp_GalleryCount > 1}
+			{if $glwp_GallerySettings.header != ''}
+			   <div class="row galleryHeader">
+					<div class="span_6">
+						{$glwp_GallerySettings.header}
+					</div>
+			   </div>
+			{/if}
+			<div class="gallery">
+				<div class="row">
+					{assign var="counter" value=1}
+					{foreach item=field from=$glwp_Galleries}
+						<div class="span_3">
+							{if $field.thumb != ''}
+								<a class="gallery img-crop" href="{$field.link}" title="{$field.title|strip_tags|trim}">
+									<img class="crop" src="{$glwp_GalleryPath}{$field.id}/glw_thumbnails/{$field.thumb}" alt="{$field.title}" />
+								</a>
+							{/if}
+							<div class="boxText">
+								<h2><a href="{$field.link}">{$field.title}</a></h2>
+								{if $field.desc != ''}
+									{$field.desc}
+								{/if}
+							</div>
+						</div>
+					{if $counter == 4}
+						</div>
+						<div class="row">
+						{assign var="counter" value=1}
+					{else}
+						{assign var="counter" value=$counter + 1}
+					{/if}
+					{/foreach}
+				</div>
+		    </div>
+			{if $glwp_GallerySettings.footer != ''}
+				<div class="row galleryFooter">
+					<div class="span_6">
+						{$glwp_GallerySettings.footer}
+					</div>
+			    </div>
+			{/if}
+
+		 <!-- Nur ein Album vorhanden oder einzelnes Album ausgewählt-->
+		 {else}
+			<div class="row albumHeader">
+				<div class="span_6">
+					<h1>{$glwp_Galleries[0].title}</h1>
+					{if $glwp_Galleries[0].desc != ''}
+							{$glwp_Galleries[0].desc}
+					{/if}
+				</div>
+			</div>
+			<div class="album magnific">
+				<div class="row">
+					{assign var="counter" value=1}
+					{assign var="galleryId" value=$glwp_Galleries[0].id}
+					{foreach item=field from=$glwp_GalleryItems.$galleryId}
+						<div class="span_3">
+								<a class="gallery img-crop" href="{$glwp_GalleryPath}{$galleryId}/glw_mediumsize/{$field.image}" alt="{$field.title}" title="{$field.title|strip_tags|trim}">
+									<img class="crop" src="{$glwp_GalleryPath}{$galleryId}/glw_thumbnails/{$field.image}" alt="{$field.title}" />
+								</a>
+							<div class="boxSpacer">
+							</div>
+						</div>
+						{if $counter == 4}
+							</div>
+							<div class="row">
+							{assign var="counter" value=1}
+						{else}
+							{assign var="counter" value=$counter + 1}
+						{/if}
+					{/foreach}
+				</div>
+			</div>
+
+		    <!-- Backlink -->
+		 	{if $glwp_AllGalleriesCount > 1}
+				<div class="row">
+					<div class="span_3">
+						<a href="{$glwp_GalleryLink}" title="{$glwp_GalleryOverview}">{$glwp_GalleryOverview}</a>
+					</div>
+				</div>
+		 	{/if}
+
+
+		 {/if}
+	 {/if}
+
+

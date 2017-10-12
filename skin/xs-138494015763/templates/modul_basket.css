@@ -1,0 +1,134 @@
+/****************************************************************************************\
+Modul Warenkorb
+\****************************************************************************************/
+/* Warenkorbelemente auf der Eintragsseite */
+table.glws_IntoBasket {
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+	border-bottom: 1px solid gray;
+}
+td.glws_IntoBasketItemNr {
+	text-align: left;
+	padding-bottom:5px;
+}
+td.glws_IntoBasketPrice {
+	text-align: left;
+	padding-bottom:5px;
+}
+td.glws_IntoBasketLink {
+	text-align: right;
+	padding-bottom:5px;
+}
+
+/* Warenkorbseite */
+div.glws_BasketHeader {
+}
+div.glws_BasketBody {
+}
+div.glws_BasketFooter {
+}
+table.glws_BasketTable {
+	width:100%;
+	padding:0;
+	margin:0;
+	border:0;
+}
+td.glws_BasketHeadLeft {
+	font-weight:bolder;
+	text-align: left;
+	border-top: 1px solid #d3d3d3;
+	border-bottom: 1px solid #d3d3d3;
+	padding: 4px;
+}
+td.glws_BasketHeadRight {
+	font-weight:bolder;
+	text-align: right;
+	border-top: 1px solid #d3d3d3;
+	border-bottom: 1px solid #d3d3d3;
+	padding: 4px;
+}
+td.glws_BasketLineLeft {
+	text-align: left;
+	padding: 4px;
+}
+td.glws_BasketLineRight {
+	text-align: right;
+	padding: 4px;
+}
+td.glws_BasketFootLeft {
+	font-weight:bolder;
+	text-align: left;
+	border-top: 1px solid #d3d3d3;
+	padding: 4px;
+}
+td.glws_BasketFootRight {
+	font-weight:bolder;
+	text-align: right;
+	border-top: 1px solid #d3d3d3;
+	padding: 4px;
+}
+td.glws_BasketButtonLeft {
+	text-align: left;
+	padding: 4px;
+	padding-top:10px;
+}
+td.glws_BasketButtonRight {
+	text-align: right;
+	padding: 4px;
+	padding-top:10px;
+}
+.glws_BasketInpQty {
+	background-color:#f0f0f0;
+	border:1px solid #c0c0c0;
+	width:30px;
+	text-align:right;
+}
+
+/* Adressseite */
+div.glws_BasketAddressHeader {
+}
+div.glws_BasketAddressBody {
+}
+div.glws_BasketAddressFooter {
+}
+table.glws_BasketAddressTable {
+	width:100%;
+	padding:0;
+	margin:0;
+	border:0;
+}
+td.glws_BasketAddress {
+	padding: 2px;
+}
+table.glws_BasketPayment {
+	width:70%;
+	padding:0;
+	margin:0;
+}
+td.glws_BasketAddressButton {
+	text-align: left;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+/* Bestätigungsseite */
+div.glws_BasketConfirmHeader {
+}
+div.glws_BasketConfirmBody {
+}
+div.glws_BasketConfirmFooter {
+}
+td.glws_BasketConfirmButtonLeft {
+	text-align: left;
+	padding: 4px;
+	padding-top:10px;
+}
+td.glws_BasketConfirmButtonRight {
+	text-align: right;
+	padding: 4px;
+	padding-top:10px;
+}
+#order_link {
+	visibility: hidden;
+}

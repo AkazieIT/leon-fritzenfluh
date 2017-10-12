@@ -1,0 +1,67 @@
+<?php xml version="1.0" encoding="utf-8"?>
+<xfields>
+    <content>
+        <field tag="text" type="text" id="title" name="title" label="Titel" class="inpStd">
+        </field>
+        <field tag="textarea" type="wysiwyg" id="texttop" name="texttop" label="Text oben" class="inp500100Area">
+        </field>
+
+        <field tag="line">
+        </field>
+        <field tag="subtitle" label="Box 1">
+        </field>
+        <field tag="text" type="image" id="imagebox1" name="imagebox1" label="Bild" class="inpStd">
+        </field>
+        <field tag="text" type="download" id="linkbox1" name="linkbox1" label="PDF" class="inpStd">
+        </field>
+        <field tag="text" type="text" id="titlebox1" name="titlebox1" label="Titel" class="inpStd">
+        </field>
+        <field tag="textarea" type="wysiwyg" id="textbox1" name="textbox1" label="Text" class="inp35050Area">
+        </field>
+
+        <field tag="line">
+        </field>
+        <field tag="subtitle" label="Box 2">
+        </field>
+        <field tag="text" type="image" id="imagebox2" name="imagebox2" label="Bild" class="inpStd">
+        </field>
+        <field tag="text" type="download" id="linkbox2" name="linkbox2" label="PDF" class="inpStd">
+        </field>
+        <field tag="text" type="text" id="titlebox2" name="titlebox2" label="Titel" class="inpStd">
+        </field>
+        <field tag="textarea" type="wysiwyg" id="textbox2" name="textbox2" label="Text" class="inp35050Area">
+        </field>
+
+        <field tag="line">
+        </field>
+        <field tag="subtitle" label="Box 3">
+        </field>
+        <field tag="text" type="image" id="imagebox3" name="imagebox3" label="Bild" class="inpStd">
+        </field>
+        <field tag="text" type="download" id="linkbox3" name="linkbox3" label="PDF" class="inpStd">
+        </field>
+        <field tag="text" type="text" id="titlebox3" name="titlebox3" label="Titel" class="inpStd">
+        </field>
+        <field tag="textarea" type="wysiwyg" id="textbox3" name="textbox3" label="Text" class="inp35050Area">
+        </field>
+
+        <field tag="line">
+        </field>
+        <field tag="subtitle" label="Box 4">
+        </field>
+        <field tag="text" type="image" id="imagebox4" name="imagebox4" label="Bild" class="inpStd">
+        </field>
+        <field tag="text" type="download" id="linkbox4" name="linkbox4" label="PDF" class="inpStd">
+        </field>
+        <field tag="text" type="text" id="titlebox4" name="titlebox4" label="Titel" class="inpStd">
+        </field>
+        <field tag="textarea" type="wysiwyg" id="textbox4" name="textbox4" label="Text" class="inp35050Area">
+        </field>
+
+        <field tag="line">
+        </field>
+        <field tag="textarea" type="wysiwyg" id="textbottom" name="textbottom" label="Text unten" class="inp500100Area">
+        </field>
+
+    </content>
+</xfields>

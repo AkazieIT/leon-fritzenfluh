@@ -1,0 +1,16 @@
+<?php xml version="1.0" encoding="utf-8"?>
+<xfields>
+    <content>
+        <field tag="text" type="text" id="title" name="title" label="Titel" class="inpStd">
+        </field>
+        <field tag="textarea" type="wysiwyg-min" id="description" name="description" label="Text" class="inp500100Area">
+        </field>
+        <field tag="text" type="image" id="image1" name="image1" label="Kleines Bild 1" class="inpHalf">
+        </field>
+        <field tag="text" type="image" id="image2" name="image2" label="Kleines Bild 2" class="inpHalf">
+        </field>
+        <field tag="text" type="image" id="image3" name="image3" label="Breites Bild" class="inpHalf">
+        </field>
+    </content>
+</xfields>
+

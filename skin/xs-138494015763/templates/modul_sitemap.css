@@ -1,0 +1,44 @@
+/****************************************************************************************\
+Modul Sitemap
+\****************************************************************************************/
+p.glws_MapLevel0,p.glws_MapLevel1,p.glws_MapLevel2,p.glws_MapLevel3,p.glws_MapLevel4,p.glws_MapLevel5 {
+	width:300px;
+	margin-bottom:3px;
+}
+p.glws_MapLevel0 {
+	border-top:1px solid #000000;
+	padding-left:10px;
+	padding-top:3px;
+}
+p.glws_MapLevel1 {
+	padding-left:30px;
+}
+p.glws_MapLevel2 {
+	padding-left:50px;
+}
+p.glws_MapLevel3 {
+	padding-left:70px;
+}
+p.glws_MapLevel4 {
+	padding-left:90px;
+}
+p.glws_MapLevel5 {
+	padding-left:110px;
+}
+
+a.glws_MapLevel0, a.glws_MapLevel1, a.glws_MapLevel2, a.glws_MapLevel3, a.glws_MapLevel4, a.glws_MapLevel5 {
+	text-decoration:none;
+}
+a.glws_MapLevel0:hover, a.glws_MapLevel1:hover, a.glws_MapLevel2:hover, a.glws_MapLevel3:hover, a.glws_MapLevel4:hover, a.glws_MapLevel5:hover {
+	text-decoration:underline;
+}
+a.glws_MapLevel0act, a.glws_MapLevel1act, a.glws_MapLevel2act, a.glws_MapLevel3act, a.glws_MapLevel4act, a.glws_MapLevel5act {
+	text-decoration:none;
+}
+a.glws_MapLevel0act:hover, a.glws_MapLevel1act:hover, a.glws_MapLevel2act:hover, a.glws_MapLevel3act:hover, a.glws_MapLevel4act:hover, a.glws_MapLevel5act:hover {
+	text-decoration:underline;
+}
+a.glws_MapLevel0, a.glws_MapLevel0act {
+	font-weight:700;
+}
+

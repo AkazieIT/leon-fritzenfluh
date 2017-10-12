@@ -1,0 +1,30 @@
+<?php xml version="1.0" encoding="utf-8"?>
+<xfields>
+    <content>
+        <field tag="text" type="image" id="titleimage" name="titleimage" label="Titelbild (nur für ersten Eintrag jeder Spalte)" class="inpStd">
+        </field>
+        <field tag="line"></field>
+        <field tag="text" type="text" id="date" name="date" label="Datum" class="inpHalf">
+        </field>
+        <field tag="text" type="text" id="title" name="title" label="Titel" class="inpStd">
+        </field>
+        <field tag="textarea" type="wysiwyg-min" id="description" name="description" label="Text" class="inp500100Area">
+        </field>
+        <field tag="text" type="download" id="download" name="download" label="Download" class="inpStd">
+        </field>
+        <field tag="text" type="text" id="downloadtext" name="downloadtext" label="Download Text" class="inpStd">
+        </field>
+        <field tag="text" type="text" id="link" name="link" label="Link" class="inpStd" value="http://">
+        </field>
+        <field tag="text" type="text" id="linktext" name="linktext" label="Link Text" class="inpStd">
+        </field>
+        <field tag="text" type="image" id="image" name="image" label="Bild" class="inpStd">
+        </field>
+        <field tag="line"></field>
+        <field tag="select" id="position" name="position" label="Position" class="inpHalf">
+        	<option name="Links" value="left"></option>
+        	<option name="Rechts" value="right"></option>
+        </field>
+    </content>
+</xfields>
+

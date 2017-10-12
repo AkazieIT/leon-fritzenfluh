@@ -1,0 +1,32 @@
+{foreach item=field from=$xContent}
+	{assign var="titleMargin" value=''}
+	<article>
+		<div class="row">
+			<div class="span_6">
+				{if $field.title != ''}
+					<h1>{$field.title}</h1>
+					{assign var="titleMargin" value='titleMargin'}
+				{/if}
+				{$field.description}
+			</div>
+
+			<div class="span_6 {$titleMargin}">
+				{if $field.image1 != ''}
+					<div class="img-crop img-crop1">
+						<img class="crop" src="_upl/images/{$field.image1}" alt="Bild {$field.image1}" />
+					</div>
+				{/if}
+				{if $field.image2 != ''}
+					<div class="img-crop img-crop2">
+						<img class="crop" src="_upl/images/{$field.image2}" alt="Bild {$field.image2}" />
+					</div>
+				{/if}
+				{if $field.image3 != ''}
+					<div class="img-crop img-crop3">
+						<img class="crop crop3" src="_upl/images/{$field.image3}" alt="Bild {$field.image3}" />
+					</div>
+				{/if}
+			</div>
+		</div>
+	</article>
+{/foreach}

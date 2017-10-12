@@ -1,0 +1,119 @@
+<div class="glws_Entry glws_Poll">
+	<h1>{$lang.poll_title}</h1>
+	<!-- Gibt es eine aktive Umfrage? -->
+	{if $glwp_NumActivePoll > 0}
+		<h2>{$glwp_ActivePoll.title}</h2>
+
+		<!-- Gibt es einen Text zu dieser Umfrage? -->
+		{if $glwp_ActivePoll.text != ''}
+			<p>{$glwp_ActivePoll.text}</p>
+		{/if}
+
+		<!-- hat der Besucher bereits teilgenommen? -->
+		{if $glwp_AllreadyVoted == 0}
+			<div style="border: 1px solid #ccc; background-color: #f6f6f6; padding:10px; margin-bottom:10px;">
+				{if $captchaError == 'captchaError'}
+					<p style="color: red">{$lang.comment_captcha_error}</p>
+
+				{elseif $voteError == 'voteError'}
+					<p style="color: red">{$lang.comment_error}</p>
+				{/if}
+				<form method="post" action="{$glwp_FormAction}">
+				<!-- Bei captcha Fehler muss das vom user gewählte voting wieder gesetzt werden -->
+				{foreach item=field from=$glwp_ActivePoll.answers}
+					{assign var="checked" value=""}
+					{if $userVote == $field.id}
+						{assign var="checked" value=" checked"}
+					{/if}
+
+					<p><input{$checked} type="radio" name="poll_item_id" id="poll_item_id-{$field.id}" value="{$field.id}" />{$field.text}</p>
+				{/foreach}
+
+				<!-- Soll ein captcha verwendet werden? -->
+				{if $glwp_Captcha > 0}
+					<p>
+						<img id="siimage{$cid}" style="padding-right: 5px; border: 0" src="{$securimageLink}?sid={$securimageSid}" />
+						<a href="#" title="Refresh Image" onclick="document.getElementById('siimage{$cid}').src = '{$securimageLink}?sid=' + Math.random(); return false">
+						<img title="{$lang.comment_captcha_reload}" src="/_upl/images/reload_icon.png" alt="Reload Image" border="0" onclick="this.blur()" align="bottom" /></a>
+					</p>
+					<p>{$lang.comment_label_captcha}<br /><input class="inp150" type="text" name="code" size="12" /></p>
+				{/if}
+				<p><input class="longbutform" type="submit" name="vote" id="vote" value="{$lang.poll_vote}" /></p>
+				</form>
+			</div>
+		{else}
+			{if $newVote == 1}
+				<p>{$lang.poll_thanks_for_voting}</p>
+			{else}
+				<p>{$lang.poll_allredy_voted}</p>
+			{/if}
+		{/if}
+
+		<h2>{$lang.poll_intermediate_result}</h2>
+		<!-- Gibt es schon Stimmen zu dieser Umfrage? -->
+		{if $glwp_ActivePoll.votes > 0}
+			{foreach item=field from=$glwp_ActivePoll.answers}
+				<div>{$field.text}</div>
+	            <div style="background: none repeat scroll 0% 0% white; border: 1px solid rgb(204, 204, 204); width: 220px; margin: 0pt 5px 5px 0pt; padding: 1px; float: left;">
+	            	<div style="background-color: rgb(56, 105, 159); height: 12px; width: {$field.percents}%;"></div>
+	            </div>
+	            <div style="float: left;">
+	            	{$field.percents}% ({$field.votes} {$lang.poll_votes})
+	            </div>
+	          	<br class="glws_ClearAll" />
+			{/foreach}
+			<p>{$lang.poll_total_votes}: {$glwp_ActivePoll.votes}<br />
+			<!-- Mit dem Smarty Modifikator |truncate wird beim Datum hinten die Zeit abgeschnitten -->
+			{$lang.poll_duration}: {$glwp_ActivePoll.start_date|truncate:10:"":true} - {$glwp_ActivePoll.end_date|truncate:10:"":true}</p>
+
+			<!-- Gibt es einen Kommentar zu dieser Umfrage? -->
+			{if $glwp_ActivePoll.comment != ''}
+				<p>{$glwp_ActivePoll.comment}</p>
+			{/if}
+		{else}
+			<p>{$lang.poll_no_active_votes}</p>
+		{/if}
+	{else}
+		<p>{$lang.poll_no_active_poll}</p>
+	{/if}
+	<p>&nbsp;</p>
+
+</div>
+{if $glwp_NumArchivePolls > 0}
+	<div class="glws_Entry glws_PollArchive">
+		<h1>{$lang.poll_archive_title}</h1>
+
+		{foreach item=poll from=$glwp_ArchivePolls}
+			<h2>{$poll.title}</h2>
+
+			<!-- Gibt es einen Text zu dieser Umfrage? -->
+			{if $poll.text != ''}
+				<p>{$poll.text}</p>
+			{/if}
+
+			{foreach item=field from=$poll.answers}
+				<div>{$field.text}</div>
+	            <div style="background: none repeat scroll 0% 0% white; border: 1px solid rgb(204, 204, 204); width: 220px; margin: 0pt 5px 5px 0pt; padding: 1px; float: left;">
+	            	<div style="background-color: rgb(56, 105, 159); height: 12px; width: {$field.percents}%;"></div>
+	            </div>
+	            <div style="float: left;">
+	            	{$field.percents}% ({$field.votes} {$lang.poll_votes})
+	            </div>
+	          	<br class="glws_ClearAll" />
+			{/foreach}
+			<p>{$lang.poll_total_votes}: {$poll.votes}<br />
+			<!-- Mit dem Smarty Modifikator |truncate wird beim Datum hinten die Zeit abgeschnitten -->
+			{$lang.poll_duration}: {$poll.start_date|truncate:10:"":true} - {$poll.end_date|truncate:10:"":true}</p>
+
+			<!-- Gibt es einen Kommentar zu dieser Umfrage? -->
+			{if $poll.comment != ''}
+				<p>{$poll.comment}</p>
+			{/if}
+			<p>&nbsp;</p>
+
+		{/foreach}
+
+	</div>
+{/if}
+
+

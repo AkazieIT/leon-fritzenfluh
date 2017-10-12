@@ -1,0 +1,92 @@
+/****************************************************************************************\
+Modul Catalog
+\****************************************************************************************/
+/* Container */
+div.glws_CatListContainer {
+	width:100%;
+}
+div.glws_CatListHeader {
+	width:100%;
+}
+div.glws_CatSearch {
+	width:100%;
+	padding-top:5px;
+	padding-bottom:15px;
+}
+div.glws_CatListBody {
+	width:100%;
+}
+div.glws_CatListFooter {
+	width:100%;
+}
+
+/* Suchliste ein- und zweispaltig */
+div.glws_Cat1Col {
+	width:100%;
+	margin-top:5px;
+	padding-top:10px;
+	margin-bottom:5px;
+	padding-bottom:10px;
+	border-bottom:1px solid #808080;
+	border-top:1px solid #808080;
+}
+div.glws_Cat2Col {
+	width:100%;
+	margin-top:5px;
+	padding-top:10px;
+	margin-bottom:5px;
+	padding-bottom:10px;
+	border-bottom:1px solid #808080;
+	border-top:1px solid #808080;
+}
+div.glws_Cat2ColLeft {
+	width:250px;
+	float:left;
+}
+div.glws_Cat2ColRight {
+	width:200px;
+	float:left;
+}
+
+span.glws_Cat0act {
+	display:block;
+	vertical-align:top;
+	padding-bottom:3px;
+}
+span.glws_Cat0inact {
+	display:block;
+	vertical-align:top;
+	padding-bottom:3px;
+}
+span.glws_Cat1act {
+	display:block;
+	vertical-align:top;
+	padding-left:20px;
+	padding-bottom:3px;
+}
+span.glws_Cat1inact {
+	display:block;
+	vertical-align:top;
+	padding-left:20px;
+	padding-bottom:3px;
+}
+a.glws_Cat0act {
+	font-weight:600;
+}
+a.glws_Cat0inact {
+}
+a.glws_Cat1act {
+	font-weight:600;
+}
+a.glws_Cat1inact {
+}
+
+/* Formularfelder */
+.glws_catInp,.glws_catSel,.glws_catBut {
+	background-color:#f0f0f0;
+	border:1px solid #c0c0c0;
+}
+.glws_catInp { width:250px }
+.glws_catSel { width:250px }
+.glws_catBut { width:30px }
+

@@ -1,0 +1,125 @@
+/*Individuelles Stylesheet für diese Seite*/
+
+.homeContent {
+	position: relative;
+}
+
+.homeClaim {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 142px;
+	width: 49%;
+	height: 170px;
+	padding: 12px;
+	background: rgba(255,255,255,0.8);
+	color: #623c1b;
+}
+
+.boxImage {
+	position: relative;
+	background-size: cover;
+	border: 2px solid #fff;
+	margin-bottom: 10px;
+}
+
+.boxImage > img, .boxImage > a img {
+	width: 100%;
+	height: auto;
+}
+
+.boxImage > img a {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+
+.boxTitle {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	padding: 2px 5px;
+	background: #fff;
+	color: #623c1b;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-transform: lowercase;
+	font-size: 12px;
+	font-size: 1.3rem;
+}
+
+.boxText > p {
+	margin-top: 8px;
+}
+
+p.eventItem {
+	border-bottom: 1px solid #a18a76;
+	margin-top: 4px;
+	padding-bottom: 4px;
+}
+
+.homeContent strong {
+	font-weight: 600;
+}
+
+.homeContent a {
+	color: #fff;
+	background: url('../../../_upl/images/bga.png') no-repeat;
+	background-position: 0 6px;
+	padding-left: 18px;
+}
+
+.homeContent .boxImage a {
+	background: none;
+	padding-left: 0;
+}
+
+
+.homeContent .eventItem a {
+	background: none;
+	padding-left: 0;
+}
+
+.homeContent a:hover {
+	color: #a18a76;
+	text-decoration: none;
+}
+
+@media
+only screen and (max-width: 559px ) {
+/*
+	.homeClaim {
+		height: 140px;
+	}
+*/
+}
+
+@media
+only screen and (max-width: 599px ) {
+
+}
+
+@media
+only screen and (max-width: 899px ) {
+
+}
+
+@media
+only screen and (max-width: 779px ) {
+
+	.boxTitle {
+		font-size: 16px;
+		font-size: 1.8rem;
+	}
+
+	.homeClaim {
+		display: none;
+	}
+
+}
+
+@media
+only screen and (max-width: 479px ) {
+
+}

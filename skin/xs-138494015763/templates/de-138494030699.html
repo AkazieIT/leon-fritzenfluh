@@ -1,0 +1,29 @@
+<div class="homeContent">
+	<div class="row">
+		{foreach item=field from=$boxes}
+			<div class="span_3">
+				<div class="boxImage" style="background-image: url('_upl/images/{$field.image}');">
+					<div class="boxTitle">{$field.title}</div>
+					{if $field.imagelink != ''}
+						<a href="{$field.imagelink}"><img src="_upl/images/homebox.png" alt="{$field.title}" /></a>
+					{else if $field.download != ''}
+						<a href="/_upl/files/{$field.download}" target="_blank"><img src="_upl/images/homebox.png" alt="{$field.title}" /></a>
+					{else}
+						<img src="_upl/images/homebox.png" alt="{$field.title}" />
+					{/if}
+				</div>
+				<div class="boxText">
+				{if $field.text == '%%getEvents()%%' || $field.text == '<p>%%getEvents()%%</p>'}
+					{foreach item=event from = $events}
+						<p class="eventItem"><strong>{$event.date}</strong><br />
+						<a href="{$event.link}">{$event.title}</a></p>
+					{/foreach}
+					<p><a href="{$eventsLink}">Alle Events</a></a>
+				{else}
+					{$field.text}
+				{/if}
+				</div>
+			</div>
+		{/foreach}
+	</div>
+</div>

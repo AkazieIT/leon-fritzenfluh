@@ -1,0 +1,75 @@
+{$pageHeader}
+{assign var="counter" value=0}
+	<article>
+		<div class="row">
+			<div class="span_6">
+				{foreach item=field from=$xContentLeft}
+					<div class="event clearfix">
+						{if $field.titleimage != ''}
+							<div class="span_12">
+								<div>
+									<img src="_upl/images/{$field.titleimage}" alt="{$field.titleimage}" />
+								</div>
+							</div>
+						{else}
+							<div class="span_6">
+								<a name="e{$counter}"></a>
+								<h3>{$field.date} - {$field.title}</h3>
+								{if $field.description != ''}
+									<div class="eventDescription">{$field.description}</div>
+								{/if}
+								{if $field.download != ''}
+									<p><a href="_upl/files/{$field.download}" target="_blank">{$field.downloadtext}</a></p>
+								{/if}
+								{if $field.link != ''}
+									<p><a href="{$field.link}" target="_blank">{$field.linktext}</a></p>
+								{/if}
+							</div>
+							<div class="span_6">
+								{if $field.image != ''}
+									<div class="img-crop">
+										<img class="crop" src="_upl/images/{$field.image}" alt="{$field.title}" />
+									</div>
+								{/if}
+							</div>
+						{/if}
+					</div>
+				{/foreach}
+			</div>
+			<div class="span_6">
+				{foreach item=field from=$xContentRight}
+					<div class="event clearfix">
+						{if $field.titleimage != ''}
+							<div class="span_12">
+								<div>
+									<img src="_upl/images/{$field.titleimage}" alt="{$field.titleimage}" />
+								</div>
+							</div>
+						{else}
+							<div class="span_6">
+								<a name="e{$counter}"></a>
+								<h3>{$field.date} - {$field.title}</h3>
+								{if $field.description != ''}
+									<div class="eventDescription">{$field.description}</div>
+								{/if}
+								{if $field.download != ''}
+									<p><a href="_upl/files/{$field.download}" target="_blank">{$field.downloadtext}</a></p>
+								{/if}
+								{if $field.link != ''}
+									<p><a href="{$field.link}" target="_blank">{$field.linktext}</a></p>
+								{/if}
+							</div>
+							<div class="span_6">
+								{if $field.image != ''}
+									<div class="img-crop">
+										<img class="crop" src="_upl/images/{$field.image}" alt="{$field.title}" />
+									</div>
+								{/if}
+							</div>
+						{/if}
+					</div>
+				{/foreach}
+			</div>
+		</div>
+	</article>
+	{assign var="counter" value=$counter+1}

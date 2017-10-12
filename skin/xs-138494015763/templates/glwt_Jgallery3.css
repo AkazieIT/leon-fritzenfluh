@@ -1,0 +1,62 @@
+/*** CSS für Jquery Galerie 3 ***/
+
+div.glws_GalleryContainer {
+	width: 648px;
+}
+
+a:active, a:focus {
+	outline: none
+}
+
+
+.glws_GalleryThumb img, .imageHolderBid img, .imageHolderBidFirst img, .thumbnailLink img  {
+	border: 2px solid #999;
+}
+
+.glws_GalleryThumb img:hover, .imageHolderBid img:hover, .imageHolderBidFirst img:hover, .thumbnailLink img:hover  {
+	border: 2px solid #333;
+}
+
+.imageHolderBid {
+	display:none;
+	float:left;	
+	/*width:100%;*/
+	text-align:center;
+	padding-bottom:30px;
+}
+
+.thumbnailLink {
+	float:left;
+	/*height:90px;*/
+	padding: 0 5px 5px 0;
+	
+}
+
+.imageHolderBidFirst {
+	float:left;	
+	/*width:100%;*/
+	text-align:center;
+	padding-bottom:30px;
+}
+
+#prevGallery {
+	float:left;	
+}
+
+#nextGallery {
+	float:right;	
+}
+
+#galleryNav {
+	padding-bottom:10px;
+	text-align:center;
+	width: 644px;
+}
+
+#allImages {
+	float:left;
+	height:580px;
+	width:100%;	
+}
+
+

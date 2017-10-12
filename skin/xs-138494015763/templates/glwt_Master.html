@@ -1,0 +1,141 @@
+<!doctype html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="{$glwp_Lng}"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="{$glwp_Lng}"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="{$glwp_Lng}"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="{$glwp_Lng}"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>{$glwp_MetaTitle}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="{$glwp_MetaDesc}" />
+	<meta name="keywords" content="{$glwp_MetaKeys}" />
+	<meta name="author" content="{$glwp_MetaAut}" />
+	<meta name="publisher" content="{$glwp_MetaPub}" />
+	<meta name="copyright" content="{$glwp_MetaCopy}" />
+	<meta name="robots" content="archive,follow,index" />
+	<meta name="generator" content="leon* contentmanagement" />
+
+	{$glwp_RssFeed}
+	
+	<!-- styles -->
+	{$glwp_DefaultCss}
+	<link href='{$glwp_PathSkinRoot}templates/magnific-popup.css' rel='stylesheet' type='text/css'>	
+		
+	<!-- Google web fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Signika:400,600,700' rel='stylesheet' type='text/css'>	
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="{$glwp_PathSkinRoot}js/libs/modernizr.custom.02453.js"></script>
+	
+	<!--[if lt IE 9]><script src="{$glwp_PathSkinRoot}js/respond.min.js"></script><![endif]-->
+	
+	<!-- fav and touch icons -->
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+    	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
+	  
+</head>
+
+<body class="{$bodyClass} clearfix">
+	<!--[if lt IE 8]>
+		<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+	<![endif]-->
+
+	<div class="container-mainheader clearfix">
+	<div class="container">
+		
+		<!-- Start Header -->
+		<header class="main-header clearfix">
+			{if $homeBox == 'ja'}
+				<div class="homeClaim">{$homeClaim}</div>
+			{/if}
+			
+			<!-- Start Logo -->
+			<div class="logo">
+				<a href="{$glwp_LinkRoot}"><img src="_upl/images/logo_fritzenfluh_header.png" alt="Logo Panoramarestaurant Fritzenfluh"></a>
+			</div>
+			<!-- End Navigation -->
+			
+			<!-- Start Navigation -->
+			<nav class="navbar">
+				<div class="clearfix">
+					<a class="btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span aria-hidden="true" class="icon-list-2"></span>
+					</a>
+				</div>
+			
+				<div class="nav-collapse collapse">
+					{$glwp_NavLevel0Plus}
+				</div>
+			</nav>
+			<!-- End Navigation -->
+		</header>
+		<!-- End Header -->
+	</div>
+	</div>
+	<div class="header-wrap">
+
+
+		<div class="container-header">
+			<img src="{$glwp_Image1}" alt="Home Bild">
+		</div>
+	</div>
+	
+	<div class="container-content clearfix">
+		<div class="container">
+			<div id="subNav">{$glwp_SubNav}</div>
+			{$glwp_Content}
+		</div>
+	</div>
+	
+	<!-- Start Footer -->
+	<footer class="main-footer">
+		<div class="container">
+			<div class="span_3">
+				<p>Panoramarestaurant Fritzenfluh AG<br />
+				Christine Ryser-Flückiger und Ursula Flückiger<br />
+				4954 Wyssachen</p>
+				<p>062 966 10 22<br />
+				<a href="mailto:restaurant@fritzenfluh.ch">restaurant@fritzenfluh.ch</a></p>
+			</div>
+			
+			<div class="span_3">
+				{$glwp_Footer}
+			</div>
+
+			<div class="span_6">
+				<p><a href="/impressum/">Impressum</a></p>
+				<p><a href="https://www.facebook.com/panoramarestaurantfritzenfluh" target="_blank"><img 
+				src="_upl/images/facebook.png" alt="facebook" /></p>
+				<!-- <br />
+				Sitemap</p>
+				<p>Newsletter abonnieren</p>-->
+			</div>
+
+		</div>
+	</footer>
+	<!-- End Footer -->
+	
+	
+	<!-- Start Scroll to top -->
+    <a href="#" class="scrolltop">
+		<span aria-hidden="true" class="icon-arrow-up-4"></span>
+    </a>
+    <!-- End Scroll to top -->
+
+	
+<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{$glwp_PathSkinRoot}js/libs/jquery-1.10.1.min.js"><\/script>')</script>
+
+<script src="{$glwp_PathSkinRoot}js/bootstrap-nav.js"></script>
+<script src="{$glwp_PathSkinRoot}js/jquery.flexslider-min.js"></script>
+<script src="{$glwp_PathSkinRoot}js/jquery.prettyPhoto.js"></script>
+<script src="{$glwp_PathSkinRoot}js/magnific-popup-min.js"></script>
+<script src="{$glwp_PathSkinRoot}js/script.js"></script>
+{$glwp_DefaultJs}
+  
+</body>
+</html>    

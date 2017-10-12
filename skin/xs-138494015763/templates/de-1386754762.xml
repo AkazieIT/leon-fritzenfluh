@@ -1,0 +1,14 @@
+<?php xml version="1.0" encoding="utf-8"?>
+<xfields>
+    <content>
+        <field tag="text" type="text" id="title" name="title" label="Titel" class="inpStd">
+        </field>
+        <field tag="textarea" type="wysiwyg-min" id="descriptionleft" name="descriptionleft" label="Linke Spalte" class="inp500100Area">
+        </field>
+        <field tag="textarea" type="wysiwyg-min" id="descriptionright" name="descriptionright" label="Rechte Spalte" class="inp500100Area">
+        </field>
+        <field tag="textarea" type="wysiwyg-min" id="citeright" name="citeright" label="Zitat Rechte Spalte" class="inp500100Area">
+        </field>
+    </content>
+</xfields>
+

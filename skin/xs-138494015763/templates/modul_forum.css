@@ -1,0 +1,77 @@
+/****************************************************************************************\
+Modul Forum
+\****************************************************************************************/
+
+table.glws_ForumList, table.glws_ForumEdit {
+	width:100%;
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin: 5px 0;
+}
+.glws_ForumList tr, .glws_ForumEdit tr {
+	vertical-align:top;
+}
+.glws_ForumList th, .glws_ForumList td {
+	border: 1px solid black;
+	padding: 3px;
+}
+.glws_ForumEdit td {
+	padding: 6px;
+}
+.glws_ForumEdit p {
+	padding: 4px 0 0 0;
+}
+table.glws_ForumList th {
+	font-weight:100;
+	background-color: #666666;
+	color: #ffffff;
+}
+table.glws_ForumList th strong{
+	color: #ffffff;
+}
+table.glws_ForumList .subtitle {
+	background-color: #cccccc;
+}
+td.glws_ForumListLeft {
+	width:20%;
+}
+td.glws_ForumListRight {
+	width:80%;
+}
+.glws_ForumNumber {
+	text-align:center;
+}
+p.glws_ForumBreadcrumb {
+}
+
+a.glws_ForumButton {
+	background-color:#f0f0f0;
+	border:1px solid #c0c0c0;
+	padding:1px 8px;
+	text-decoration:none;
+}
+.glws_ForumInput {
+	background-color:#f0f0f0;
+	border:1px solid #c0c0c0;
+	width:100%;
+}
+a.glws_ForumThreadTitle, a.glws_ForumListTitle {
+	font-weight:700;
+}
+p.glws_ForumEditError {
+	font-weight: 700;
+	color: #ff0000;
+}
+.glws_ForumImputError {
+	background-color: #ffbbbb;
+}
+.glws_ForumFile {
+	display: inline;
+}
+
+.glws_ForumImage {
+	border: 0;
+	height:40px;
+	width:40px;
+}
+
