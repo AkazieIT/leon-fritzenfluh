@@ -1,0 +1,30 @@
+{foreach item=field from=$xContent}
+<article>
+    <div class="row">
+        {if $field.isTitle == '1'}
+            <div class="span_12">
+                {if $field.title != ''}
+                <h1>{$field.title}</h1>
+                {/if}
+                <p>{$field.descriptionright}</p>
+            </div>
+        {else}
+            <div class="span_4">
+                <div class="image34" style="background-image: url('_upl/images/{$field.imageleft}')">
+
+                </div>
+            </div>
+
+            <div class="span_6">
+                {if $field.title != ''}
+                <h1>{$field.title}</h1>
+                {/if}
+                <p>{$field.descriptionright}</p>
+            </div>
+        {/if}
+
+
+
+    </div>
+</article>
+{/foreach}
