@@ -6,3 +6,8 @@
     -webkit-background-size: cover;
     background-size: cover;;
 }
+
+.border-bottom{
+    border-bottom: 1px solid grey;
+    margin-bottom: 20px;
+}
